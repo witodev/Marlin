@@ -111,7 +111,7 @@
  * :[-1, 0, 1, 2, 3, 4, 5, 6, 7]
  */
 #define SERIAL_PORT_2 1
-#define NUM_SERIAL 2
+// #define NUM_SERIAL 2
 /**
  * This setting determines the communication speed of the printer.
  *
@@ -2115,7 +2115,7 @@
   //
 
   #define TFT_MARLINUI_COLOR COLOR_WHITE // main foreground color
-  #define TFT_MARLINBG_COLOR COLOR_BLACK // background color
+  #define TFT_MARLINBG_COLOR COLOR_NAVY  // background color
   #define TFT_BTCANCEL_COLOR 0xA9A6 // cancel button
   #define TFT_BTARROWS_COLOR COLOR_WHITE // arrows up/down
   #define TFT_BTOKMENU_COLOR COLOR_WHITE // enter button
