@@ -44,7 +44,7 @@
 #define X_STOP_PIN                          PA15
 #define Y_STOP_PIN                          PA12
 #define Z_MIN_PIN                           PA11
-#define Z_MAX_PIN                           PC4
+// #define Z_MAX_PIN                           PC4
 
 #ifndef FIL_RUNOUT_PIN
   #define FIL_RUNOUT_PIN                    PA4   // MT_DET
@@ -69,9 +69,9 @@
 #define E0_STEP_PIN                         PD6
 #define E0_DIR_PIN                          PD3
 
-#define E1_ENABLE_PIN                       PA3
-#define E1_STEP_PIN                         PA6
-#define E1_DIR_PIN                          PA1
+// #define E1_ENABLE_PIN                       PA3
+// #define E1_STEP_PIN                         PA6
+// #define E1_DIR_PIN                          PA1
 
 //
 // Temperature Sensors
@@ -106,8 +106,15 @@
 //
 // SD Card
 //
+#define SDCARD_CONNECTION ONBOARD
 #define SDIO_SUPPORT
-#define SD_DETECT_PIN                       PD12
+#define SD_DETECT_PIN PD12
+
+//
+// EEPROM
+//
+//#define FLASH_EEPROM_EMULATION
+#define SDCARD_EEPROM_EMULATION
 
 //
 // LCD / Controller
@@ -125,17 +132,15 @@
  * to let the bootloader init the screen.
  */
 #if ENABLED(FSMC_GRAPHICAL_TFT)
-  #define DOGLCD_MOSI                       -1 // prevent redefine Conditionals_post.h
-  #define DOGLCD_SCK                        -1
-
   #define FSMC_CS_PIN                       PD7   // NE4
   #define FSMC_RS_PIN                       PD11  // A0
-
-  // #define LCD_RESET_PIN                     PC6   // FSMC_RST
-  // #define NO_LCD_REINIT                           // Suppress LCD re-initialization
-  #define LCD_USE_DMA_FSMC // DMA transfer to TFT?
+  
+  #define LCD_USE_DMA_FSMC
   #define FSMC_DMA_DEV DMA2
   #define FSMC_DMA_CHANNEL DMA_CH5
+
+  //#define LCD_RESET_PIN      PC6    // FSMC_RST
+  //#define NO_LCD_REINIT             // Suppress LCD re-initialization
 
   #define LCD_BACKLIGHT_PIN                 PD13
 
