@@ -44,7 +44,7 @@
 #define X_STOP_PIN                          PA15
 #define Y_STOP_PIN                          PA12
 #define Z_MIN_PIN                           PA11
-// #define Z_MAX_PIN                           PC4
+#define Z_MAX_PIN                           PC4
 
 #ifndef FIL_RUNOUT_PIN
   #define FIL_RUNOUT_PIN                    PA4   // MT_DET
@@ -86,7 +86,6 @@
 #define HEATER_0_PIN                        PC3   // HEATER1
 #define HEATER_1_PIN                        PB0   // HEATER2
 #define HEATER_BED_PIN                      PA0   // HOT BED
-
 #define FAN_PIN                             PB1   // FAN
 
 //
@@ -100,7 +99,6 @@
 //
 #define POWER_LOSS_PIN                      PA2   // PW_DET
 #define PS_ON_PIN                           PA3   // PW_OFF
-
 #define LED_PIN                             PB2
 
 //
@@ -139,7 +137,7 @@
   #define FSMC_DMA_DEV DMA2
   #define FSMC_DMA_CHANNEL DMA_CH5
 
-  //#define LCD_RESET_PIN      PC6    // FSMC_RST
+  //#define LCD_RESET_PIN                   PC6    // FSMC_RST
   //#define NO_LCD_REINIT             // Suppress LCD re-initialization
 
   #define LCD_BACKLIGHT_PIN                 PD13
@@ -169,31 +167,34 @@
   // Software serial
   //
 
+  #define TX_SOFTWARE_SERIAL                PA6 // E1_STEP_PIN
+  #define RX_SOFTWARE_SERIAL                PA1 // E1_DIR_PIN
+
   #ifndef X_SERIAL_TX_PIN
-    #define X_SERIAL_TX_PIN  PA6 //E1_STEP_PIN
+    #define X_SERIAL_TX_PIN                 TX_SOFTWARE_SERIAL 
   #endif
-  #ifndef X_SERIAL_RX_PIN
-    #define X_SERIAL_RX_PIN  PA1 //E1_DIR_PIN
+  #ifndef X_SERIAL_RX_PIN               
+    #define X_SERIAL_RX_PIN                 RX_SOFTWARE_SERIAL 
   #endif
 
-  #ifndef Y_SERIAL_TX_PIN
-    #define Y_SERIAL_TX_PIN  PA6 //E1_STEP_PIN
+  #ifndef Y_SERIAL_TX_PIN               
+    #define Y_SERIAL_TX_PIN                 TX_SOFTWARE_SERIAL 
   #endif
-  #ifndef Y_SERIAL_RX_PIN
-    #define Y_SERIAL_RX_PIN  PA1 //E1_DIR_PIN
+  #ifndef Y_SERIAL_RX_PIN               
+    #define Y_SERIAL_RX_PIN                 RX_SOFTWARE_SERIAL 
   #endif
 
   #ifndef Z_SERIAL_TX_PIN
-    #define Z_SERIAL_TX_PIN  PA6 //E1_STEP_PIN
+    #define Z_SERIAL_TX_PIN                 TX_SOFTWARE_SERIAL 
   #endif
   #ifndef Z_SERIAL_RX_PIN
-    #define Z_SERIAL_RX_PIN  PA1 //E1_DIR_PIN
+    #define Z_SERIAL_RX_PIN                 RX_SOFTWARE_SERIAL 
   #endif
 
   #ifndef E0_SERIAL_TX_PIN
-    #define E0_SERIAL_TX_PIN PA6 //E1_STEP_PIN
+    #define E0_SERIAL_TX_PIN                TX_SOFTWARE_SERIAL 
   #endif
   #ifndef E0_SERIAL_RX_PIN
-    #define E0_SERIAL_RX_PIN PA1 //E1_DIR_PIN
+    #define E0_SERIAL_RX_PIN                RX_SOFTWARE_SERIAL 
   #endif
 #endif
